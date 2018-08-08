@@ -39,15 +39,27 @@ public class UserDto {
 
 	@Embedded
 	private Address homeAddress;
-	
+
 	@Embedded
 	@AttributeOverrides({
-	@AttributeOverride(name="street",column=@Column(name="companyStreet")),
-	@AttributeOverride(name="city",column=@Column(name="companyCity")),
-	@AttributeOverride(name="state",column=@Column(name="companyState"))
+		@AttributeOverride(name="street",column=@Column(name="companyStreet")),
+		@AttributeOverride(name="city",column=@Column(name="companyCity")),
+		@AttributeOverride(name="state",column=@Column(name="companyState"))
 	})
 	private Address companyAddress;
-	
+
+	@Lob
+	private String description;
+
+	@Temporal(TemporalType.DATE)
+	private Date joiningDate;
+
+	@Temporal(TemporalType.TIME)
+	private Date joiningTime;
+
+	public UserDto() {
+		this.tenantId="sanjay";
+	}
 
 	public Address getHomeAddress() {
 		return homeAddress;
@@ -63,19 +75,6 @@ public class UserDto {
 
 	public void setCompanyAddress(Address companyAddress) {
 		this.companyAddress = companyAddress;
-	}
-
-	@Lob
-	private String description;
-
-	@Temporal(TemporalType.DATE)
-	private Date joiningDate;
-
-	@Temporal(TemporalType.TIME)
-	private Date joiningTime;
-
-	public UserDto() {
-		this.tenantId="sanjay";
 	}
 
 	public String getDescription() {
