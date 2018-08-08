@@ -30,6 +30,7 @@
 <!--         <property name="hibernate.cache.region.factory_class">org.hibernate.testing.cache.CachingRegionFactory -->
 <!--         </property> -->
         <mapping class="main.dto.UserDto"/>
+        <mapping class="main.dto.UserDetailsDto"/>
 <!--         <class-cache class="org.hibernate.jpa.test.Item" usage="read-write"/> -->
 <!--         <collection-cache collection="org.hibernate.jpa.test.Item.distributors" usage="read-write" region="RegionName"/> -->
 <!--         <event type="pre-insert"/> -->

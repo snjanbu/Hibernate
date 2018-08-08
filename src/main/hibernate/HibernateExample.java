@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import main.dto.Address;
 import main.dto.UserDto;
 
 public class HibernateExample {
@@ -20,11 +21,24 @@ public class HibernateExample {
 		 * Setting the UserDto
 		 */
 		UserDto userDto=new UserDto();
-		userDto.setUserId(6101);
 		userDto.setUserName("Santhosh");
 		userDto.setDescription("Sandy");
 		userDto.setJoiningDate(new Date());
 		userDto.setJoiningTime(new Date());
+	
+		/**
+		 * Setting the UserDto
+		 */
+		UserDto userDto1=new UserDto();
+		userDto1.setUserName("Sanjay");
+		userDto1.setDescription("Sanjayanbu");
+		userDto1.setJoiningDate(new Date());
+		userDto1.setJoiningTime(new Date());
+		Address address=new Address();
+		address.setStreet("Bhagath Singh Street");
+		address.setCity("Madurai");
+		address.setState("TamilNadu");
+		userDto1.setCompanyAddress(address);
 		
 		/**
 		 * Creating the Session Factory
@@ -37,6 +51,7 @@ public class HibernateExample {
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(userDto);
+		session.save(userDto1);
 		session.getTransaction().commit();
 		session.close();
 
@@ -45,8 +60,8 @@ public class HibernateExample {
 		 */
 		userDto=null;
 		session =sessionFactory.openSession();
-		userDto=(UserDto)session.get(UserDto.class, 6101);
-		System.out.println(userDto.getDescription());
+		userDto=(UserDto)session.get(UserDto.class, 2);
+		System.out.println(userDto.getCompanyAddress().getCity());
 		session.close();
 	}
 
