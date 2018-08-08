@@ -31,6 +31,9 @@
 <!--         </property> -->
         <mapping class="main.dto.UserDto"/>
         <mapping class="main.dto.UserDetailsDto"/>
+        <mapping class="main.dto.EmployeeDto"/>
+        <mapping class="main.dto.ProjectDto"/>
+        
 <!--         <class-cache class="org.hibernate.jpa.test.Item" usage="read-write"/> -->
 <!--         <collection-cache collection="org.hibernate.jpa.test.Item.distributors" usage="read-write" region="RegionName"/> -->
 <!--         <event type="pre-insert"/> -->
