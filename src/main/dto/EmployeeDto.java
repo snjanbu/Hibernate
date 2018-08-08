@@ -4,7 +4,12 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 @Entity
 public class EmployeeDto {
@@ -14,7 +19,9 @@ public class EmployeeDto {
 	
 	private String employeeName;
 	
-	@ManyToMany
+	@OneToMany
+	@NotFound(action=NotFoundAction.IGNORE)
+	@Cascade(value=CascadeType.PERSIST)
 	private List<ProjectDto> projectDtoList;
 
 	public int getEmployeeId() {

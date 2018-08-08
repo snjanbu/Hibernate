@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 @Entity
 public class ProjectDto {
 	
@@ -16,17 +19,6 @@ public class ProjectDto {
 	private int projectId;
 	
 	private String projectName;
-
-	@ManyToMany(mappedBy="projectDtoList")
-	private List<EmployeeDto> employeeDtoList;
-	
-	public List<EmployeeDto> getEmployeeDtoList() {
-		return employeeDtoList;
-	}
-
-	public void setEmployeeDtoList(List<EmployeeDto> employeeDtoList) {
-		this.employeeDtoList = employeeDtoList;
-	}
 
 	public int getProjectId() {
 		return projectId;
