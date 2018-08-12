@@ -33,6 +33,9 @@
         <mapping class="main.dto.UserDetailsDto"/>
         <mapping class="main.dto.EmployeeDto"/>
         <mapping class="main.dto.ProjectDto"/>
+        <mapping class="main.dto.VehicleDto"/>
+        <mapping class="main.dto.TwoWheelerDto"/>
+        <mapping class="main.dto.FourWheelerDto"/>
         
 <!--         <class-cache class="org.hibernate.jpa.test.Item" usage="read-write"/> -->
 <!--         <collection-cache collection="org.hibernate.jpa.test.Item.distributors" usage="read-write" region="RegionName"/> -->
