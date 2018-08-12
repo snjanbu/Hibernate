@@ -4,7 +4,6 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("Car")
 public class FourWheelerDto extends VehicleDto {
 	
 	private String steeringWheel;
