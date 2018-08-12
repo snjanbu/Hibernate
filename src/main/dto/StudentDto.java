@@ -4,9 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 
 @SuppressWarnings("deprecation")
 @Entity
+@NamedQuery(name="StudentDto.ById",query="from StudentDto where studentId > :studentId")
+@NamedNativeQuery(name="StudentDto.SelectAll",query="select * from StudentDto",resultClass=StudentDto.class)
 @org.hibernate.annotations.Entity(selectBeforeUpdate=true)
 public class StudentDto {
 	
@@ -32,4 +36,8 @@ public class StudentDto {
 		this.studentName = studentName;
 	}
 	
+	@Override
+	public String toString() {
+		return this.studentId+" "+this.studentName;
+	}
 }
