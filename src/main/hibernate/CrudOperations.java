@@ -21,8 +21,10 @@ public class CrudOperations {
 			session.save(studentDto);
 		}
 		session.getTransaction().commit();
+		session.close();
 		
 		//Retrieval
+		session=sessionFactory.openSession();
 		session.beginTransaction();
 		StudentDto record=(StudentDto)session.get(StudentDto.class, 8);
 		System.out.println(record.getStudentName());
@@ -31,13 +33,15 @@ public class CrudOperations {
 		record.setStudentName("Sanjayanbu");
 		session.save(record);
 		session.getTransaction().commit();
+		session.close();
 		
 		//Delete
+		session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.delete(record);
 		session.getTransaction().commit();
-		
 		session.close();
+		System.exit(1);
 	}
 
 }

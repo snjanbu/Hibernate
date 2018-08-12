@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@SuppressWarnings("deprecation")
 @Entity
+@org.hibernate.annotations.Entity(selectBeforeUpdate=true)
 public class StudentDto {
 	
 	@Id
