@@ -29,6 +29,7 @@
         <property name="test-assertable-setting">value</property>
 <!--         <property name="hibernate.cache.region.factory_class">org.hibernate.testing.cache.CachingRegionFactory -->
 <!--         </property> -->
+		<mapping class="main.dto.StudentDto"/>
         <mapping class="main.dto.UserDto"/>
         <mapping class="main.dto.UserDetailsDto"/>
         <mapping class="main.dto.EmployeeDto"/>
